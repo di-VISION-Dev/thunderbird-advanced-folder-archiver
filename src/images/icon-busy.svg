@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+	fill="currentColor"
+	class="bi bi-archive"
+	viewBox="0 0 32 32"
+	version="1.1"
+	id="svg4"
+	xmlns="http://www.w3.org/2000/svg"
+	xmlns:svg="http://www.w3.org/2000/svg">
+	<defs
+		id="defs8" />
+	<path
+		style="stroke-width:2"
+		d="M 0,4 A 2,2 0 0 1 2,2 h 28 a 2,2 0 0 1 2,2 v 4 a 2,2 0 0 1 -2,2 v 15 a 5,5 0 0 1 -5,5 H 7 A 5,5 0 0 1 2,25 V 10 A 2,2 0 0 1 0,8 Z m 4,6 v 15 a 3,3 0 0 0 3,3 h 18 a 3,3 0 0 0 3,-3 V 10 Z M 30,4 H 2 v 4 h 28 z"
+		id="path2" />
+	<path
+		d="m 20.656159,19.513597 -7.6356,4.4304 c -0.648,0.3756 -1.4796,-0.0792 -1.4796,-0.8364 v -8.8608 c 0,-0.756 0.8304,-1.212 1.4796,-0.8352 l 7.6356,4.4304 a 0.9624,0.9624 0 0 1 0,1.6716"
+		id="path295"
+		style="fill:#0000ff;stroke:#0000ff;stroke-width:1.2;stroke-opacity:1" />
+</svg>

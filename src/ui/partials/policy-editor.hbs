@@ -1,0 +1,92 @@
+<fieldset class="row g-2 align-items-center" id="setPolGeneral" disabled>
+	<legend class="fs-5 d-flex justify-content-between">
+		__MSG_setPolGeneral__
+		<button id="btnPolReset" class="d-none btn btn-sm btn-outline-secondary" type="button">__MSG_btnReset__</button>
+	</legend>
+	<div class="col-auto">
+		<select class="form-select" name="action" aria-label="__MSG_selPolAction__" id="selPolAction">
+			<option value="archive">__MSG_archivePolAction__</option>
+			<option value="delete">__MSG_deletePolAction__</option>
+			{{#if folderPolicy}}
+			<option value="ignore">__MSG_ignorePolAction__</option>
+			{{/if}}
+		</select>
+	</div>
+	<label class="col-auto form-check-label" for="noPolAfter" id="lblPolUnits">__MSG_noPolAfter__</label>
+	<div class="col-auto" id="grpPolAfter">
+		<div class="input-group">
+			<input class="form-control" type="number" name="afterValue" value="60" id="noPolAfter">
+			<select class="form-select" name="afterUnit" aria-label="Item age units" id="selPolUnits">
+				<option value="days" selected>__MSG_daysIntervalUnit__</option>
+				<option value="months">__MSG_monthsIntervalUnit__</option>
+				<option value="years">__MSG_yearsIntervalUnit__</option>
+			</select>
+		</div>
+	</div>
+</fieldset>
+<fieldset class="mt-2" id="setPolMsgFilter" disabled>
+	<legend class="fs-5">__MSG_setPolMsgFilter__</legend>
+
+	<div class="row g-2 align-items-center" id="blkPolMsgState">
+		<div class="col-auto">__MSG_blkPolMsgState__</div>
+		<div class="col-auto">
+			<select name="read" id="selPolRead" class="form-select">
+				<option value="null" class="text-secondary">__MSG_nullReadState__</option>
+				<option value="true" selected>__MSG_readState__</option>
+				<option value="false">__MSG_unreadState__</option>
+			</select>
+		</div>
+		<div class="col-auto">and</div>
+		<div class="col-auto">
+			<select name="flagged" id="selPolFlagged" class="form-select">
+				<option value="null" class="text-secondary">__MSG_nullStarredState__</option>
+				<option value="true">__MSG_starredState__</option>
+				<option value="false" selected>__MSG_unstarredState__</option>
+			</select>
+		</div>
+		<div class="col-auto">and</div>
+		<div class="col-auto">
+			<select name="junk" id="selPolJunk" class="form-select">
+				<option value="null" class="text-secondary">__MSG_nullJunkState__</option>
+				<option value="true">__MSG_junkState__</option>
+				<option value="false" selected>__MSG_hamState__</option>
+			</select>
+		</div>
+	</div>
+
+	<div class="mt-2">
+		<label class="form-label" for="setPolTags">
+			<div class="row g-2 align-items-center">
+				<div class="col-auto"><label class="form-check-label" for="selPolTagsMode">__MSG_selPolTags__</label></div>
+				<div class="col-auto">
+					<select name="tagsmode" id="selPolTagsMode" class="form-select">
+						<option class="text-secondary" value="null">__MSG_anything__</option>
+						<option value="none">__MSG_nothing__</option>
+						<option value="all">__MSG_allBelow__</option>
+						<option value="any">__MSG_anyBelow__</option>
+					</select>
+				</div>
+			</div>
+		</label>
+		<fieldset class="pseudo-control overflow-auto border rounded" style="height: 26ex;" id="setPolTags" disabled>
+			<ul class="list-group list-group-flush">
+				<li class="list-group-item">__MSG_selPolTagsMissing__</li>
+			</ul>
+		</fieldset>
+
+	</div>
+</fieldset>
+<template id="tplPolTagItem">
+	<li class="list-group-item">
+		<div class="row g-2 align-items-center">
+			<div class="col-auto">
+				<select class="form-select">
+					<option value="null" class="text-secondary">__MSG_ignoring__</option>
+					<option value="true">__MSG_matching__</option>
+					<option value="false">__MSG_notMatching__</option>
+				</select>
+			</div>
+			<div class="col-auto"><label></label></div>
+		</div>
+	</li>
+</template>

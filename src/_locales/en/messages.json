@@ -1,0 +1,197 @@
+{
+	"extensionName": {
+		"message": "Advanced Folder Archiver"
+	},
+	"extensionDescription": {
+		"message": "Archives messages (including local folders) on per folder basis, supports manual and automatic triggering of archiving tasks"
+	},
+	"archiveFolder": {
+		"message": "Archives"
+	},
+	"notifyTaskResults": {
+		"message": "Archived $1 message(s) from $2"
+	},
+	"runallCommand": {
+		"message": "Run Archive Tasks Now"
+	},
+	"optionsCommand": {
+		"message": "&Options"
+	},
+	"mainCommand": {
+		"message": "&Archive Folder"
+	},
+	"runCommand": {
+		"message": "&Arhive Now"
+	},
+	"policyCommand": {
+		"message": "Edit &Policy"
+	},
+	"archiveSelectionCommand": {
+		"message": "Archive (Ignoring Policy)"
+	},
+	"draftsSpecialFolder": {
+		"message": "drafts"
+	},
+	"inboxSpecialFolder": {
+		"message": "inbox"
+	},
+	"junkSpecialFolder": {
+		"message": "junk"
+	},
+	"outboxSpecialFolder": {
+		"message": "outbox"
+	},
+	"sentSpecialFolder": {
+		"message": "sent"
+	},
+	"templatesSpecialFolder": {
+		"message": "templates"
+	},
+	"yearsIntervalUnit": {
+		"message": "years"
+	},
+	"monthsIntervalUnit": {
+		"message": "months"
+	},
+	"daysIntervalUnit": {
+		"message": "days"
+	},
+	"hoursIntervalUnit": {
+		"message": "hours"
+	},
+	"minutesIntervalUnit": {
+		"message": "minutes"
+	},
+	"btnAccept": {
+		"message": "Ok"
+	},
+	"btnCancel": {
+		"message": "Cancel"
+	},
+	"btnReset": {
+		"message": "reset"
+	},
+	"uiErrorPlaceholder": {
+		"message": "<Error>"
+	},
+	"titleMissingTag": {
+		"message": "Missing tag"
+	},
+	"folderPolicyDialog": {
+		"message": "Archive Policy"
+	},
+	"folderPolicyTitle": {
+		"message": "Folder Archive Policy"
+	},
+	"chkInherit": {
+		"message": "Use parent folder policy or default"
+	},
+	"optionsDialog": {
+		"message": "Options"
+	},
+	"tabGenereal": {
+		"message": "General"
+	},
+	"tabPolicy": {
+		"message": "Default Policy"
+	},
+	"setIntegration": {
+		"message": "Integration"
+	},
+	"chkPrefDisableNative": {
+		"message": "Disable Thunderbird built-in archive functions (recommended)"
+	},
+	"setBgService": {
+		"message": "Background service"
+	},
+	"noPrefCheckInterval": {
+		"message": "Apply archive actions on folders automatically every"
+	},
+	"hintPrefCheckInterval": {
+		"message": "Setting the interval to '0' (or less) disables the background service completely, only manual archiving is then possible."
+	},
+	"setSpecialFolders": {
+		"message": "Allow archive actions on special folders"
+	},
+	"hintPrefSpecialFolders": {
+		"message": "Be careful enabling archiving of additional special folders: some of them (like 'draft' and 'templates') could cause inconsistent behavior when included."
+	},
+	"setPolGeneral": {
+		"message": "Action"
+	},
+	"selPolAction": {
+		"message": "Archive action"
+	},
+	"archivePolAction": {
+		"message": "Archive"
+	},
+	"deletePolAction": {
+		"message": "Delete"
+	},
+	"ignorePolAction": {
+		"message": "Skip this folder"
+	},
+	"noPolAfter": {
+		"message": "items older than"
+	},
+	"setPolMsgFilter": {
+		"message": "Apply action on"
+	},
+	"blkPolMsgState": {
+		"message": "Items that are"
+	},
+	"nullReadState": {
+		"message": "read / unread"
+	},
+	"readState": {
+		"message": "read"
+	},
+	"unreadState": {
+		"message": "uread"
+	},
+	"nullStarredState": {
+		"message": "starred / not starred"
+	},
+	"starredState": {
+		"message": "starred"
+	},
+	"unstarredState": {
+		"message": "not starred"
+	},
+	"nullJunkState": {
+		"message": "junk / not junk"
+	},
+	"junkState": {
+		"message": "junk"
+	},
+	"hamState": {
+		"message": "not junk"
+	},
+	"selPolTags": {
+		"message": "and also are tagged with"
+	},
+	"selPolTagsMissing": {
+		"message": "No tags yet"
+	},
+	"anything": {
+		"message": "anything"
+	},
+	"nothing": {
+		"message": "nothing at all"
+	},
+	"allBelow": {
+		"message": "all of the below"
+	},
+	"anyBelow": {
+		"message": "any of the below"
+	},
+	"ignoring": {
+		"message": "ignoring"
+	},
+	"matching": {
+		"message": "matching"
+	},
+	"notMatching": {
+		"message": "not matching"
+	}
+}

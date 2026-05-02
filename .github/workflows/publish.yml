@@ -1,0 +1,68 @@
+name: Publish Main Release
+
+on:
+  release:
+    types: [published]
+  workflow_dispatch:
+    inputs:
+      logLevel:
+        description: 'Log level'
+        required: true
+        default: 'warning'
+        type: choice
+        options:
+        - info
+        - warning
+        - debug
+
+jobs:
+
+  release:
+    name: Release
+
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+        packages: write
+        contents: read
+        id-token: write
+
+    steps:
+    - uses: actions/checkout@v4
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: 24.x
+        cache: 'npm'
+
+    # - name: Verify commit exists in origin/main
+    #   run: |
+    #     git fetch --no-tags --prune --depth=1 origin +refs/heads/*:refs/remotes/origin/*
+    #     git branch --remote --contains | grep origin/main
+
+    - name: Set VERSION variable from tag
+      shell: bash
+      run: echo "VERSION=${GITHUB_REF/refs\/tags\/v/}" >> $GITHUB_ENV
+  
+    - name: Build XPI
+      shell: bash
+      run: |
+        npm ci
+        npm run package
+
+    - name: Publish XPI to GitHub
+      uses: softprops/action-gh-release@v2.4.2
+      with:
+        files: "dist/ThuBiArc-*"
+      env:
+        GITHUB_TOKEN: ${{ secrets.PACKAGE_WRITE_TOKEN }}
+
+    # - name: Sign and Publish to ATN
+    #   uses: kewisch/action-web-ext@v1
+    #   with:
+    #     cmd: sign
+    #     source: src # manifest.json folder
+    #     channel: listed
+    #     api-key: ${{ secrets.AMO_JWT_ISSUER }}
+    #     api-secret: ${{ secrets.AMO_JWT_SECRET }}
+    #      apiUrlPrefix: https://addons.thunderbird.net/api/v4 # CRITICAL
