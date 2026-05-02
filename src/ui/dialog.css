@@ -1,0 +1,45 @@
+:root,
+body {
+	background: var(--bg-color);
+	color: var(--text-color);
+	font-family: message-box, sans-serif !important;
+	font-size: 14px !important;
+	line-height: 1;
+	margin: 0;
+	overflow: hidden;
+	padding: 0;
+	user-select: none;
+}
+
+:root:not(.offscreen) .dialog-content {
+	bottom: 0;
+	left: 0;
+	position: fixed;
+	right: 0;
+	top: 0;
+}
+
+.pseudo-control:disabled {
+	background-color: var(--bs-secondary-bg);
+	opacity: 1;
+}
+
+.pseudo-control:disabled .list-group {
+	--bs-list-group-bg: reset;
+}
+
+.tab-content {
+	display: flex;
+}
+
+.tab-content>.tab-pane {
+	display: block !important;
+	/* undo "display: none;" */
+	visibility: hidden;
+	margin-right: -100%;
+	width: 100%;
+}
+
+.tab-content>.active {
+	visibility: visible;
+}

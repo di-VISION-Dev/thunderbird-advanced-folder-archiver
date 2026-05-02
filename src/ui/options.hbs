@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html class="dialog">
+
+<head>
+	<meta charset="utf-8">
+	<title>__MSG_optionsDialog__ - __MSG_extensionName__</title>
+	<link rel="stylesheet" href="dialog.css">
+	<link rel="stylesheet" href="bs.css">
+	<script type="text/javascript" src="bs.js"></script>
+	<script type="module" src="options.js"></script>
+</head>
+
+<body>
+	<div class="dialog-content bg-light p-3">
+		<ul class="nav nav-tabs" role="tablist">
+			<li class="nav-item" role="presentation">
+				<button class="nav-link active" id="tabGenereal" data-bs-toggle="tab" data-bs-target="#frmGeneral" type="button" role="tab" aria-controls="frmGeneral" aria-selected="true">__MSG_tabGenereal__</button>
+			</li>
+			<li class="nav-item" role="presentation">
+				<button class="nav-link" id="tabPolicy" data-bs-toggle="tab" data-bs-target="#frmPolicy" type="button" role="tab" aria-controls="frmPolicy">__MSG_tabPolicy__</button>
+			</li>
+		</ul>
+		<div class="tab-content bg-white border-start border-end border-bottom rounded-bottom">
+			<form class="tab-pane fade show active p-3" id="frmGeneral" role="tabpanel" aria-labelledby="tabGenereal" method="get" action="#">
+				<fieldset id="setIntegration">
+					<legend class="d-flex justify-content-between">
+						__MSG_setIntegration__
+						<button id="btnResetIntegration" class="btn btn-sm btn-outline-secondary" type="button">__MSG_btnReset__</button>
+					</legend>
+					<div class="form-check mt-1 mb-1">
+						<input class="form-check-input" name="disableNative" type="checkbox" id="chkPrefDisableNative">
+						<label class="form-check-label" for="chkPrefDisableNative">__MSG_chkPrefDisableNative__</label>
+					</div>
+				</fieldset>
+				<fieldset id="setBgService">
+					<legend class="d-flex justify-content-between">
+						__MSG_setBgService__
+						<button id="btnResetBgService" class="btn btn-sm btn-outline-secondary" type="button">__MSG_btnReset__</button>
+					</legend>
+					<div class="row g-2 align-items-center">
+						<div class="col-auto"><label for="noPrefCheckInterval" class="form-check-label">__MSG_noPrefCheckInterval__</label></div>
+						<div class="col-auto">
+							<div class="input-group">
+								<input id="noPrefCheckInterval" name="checkInterval" class="form-control" type="number" value="12">
+								<select id="selPrefItervalUnit" name="intervalUnit" class="form-select">
+									<option value="60">__MSG_hoursIntervalUnit__</option>
+									<option value="1">__MSG_minutesIntervalUnit__</option>
+								</select>
+							</div>
+						</div>
+					</div>
+					<div class="alert alert-secondary mt-1" role="alert">
+						__MSG_hintPrefCheckInterval__
+					</div>
+				</fieldset>
+				<fieldset id="setSpecialFolders" class="mt-2">
+					<legend class="d-flex justify-content-between">
+						__MSG_setSpecialFolders__
+						<button id="btnResetSpecialFolders" class="btn btn-sm btn-outline-secondary" type="button">__MSG_btnReset__</button>
+					</legend>
+
+					{{> pref-specialFolder specName='drafts' isFirst=true}}
+					{{> pref-specialFolder specName='inbox'}}
+					{{> pref-specialFolder specName='junk' checked=true}}
+					{{> pref-specialFolder specName='outbox'}}
+					{{> pref-specialFolder specName='sent' checked=true}}
+					{{> pref-specialFolder specName='templates'}}
+
+					<div class="alert alert-warning mt-1" role="alert">
+						__MSG_hintPrefSpecialFolders__
+					</div>
+				</fieldset>
+			</form>
+			<form class="tab-pane fade p-3" id="frmPolicy" role="tabpanel" aria-labelledby="tabPolicy" method="get" action="#">
+				{{> policy-editor}}
+			</form>
+		</div>
+		{{> dialog-buttons}}
+	</div>
+</body>
+
+</html>

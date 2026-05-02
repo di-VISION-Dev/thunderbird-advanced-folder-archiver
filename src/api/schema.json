@@ -1,0 +1,129 @@
+[
+	{
+		"namespace": "thubiarc",
+		"functions": [
+			{
+				"name": "getPref",
+				"type": "function",
+				"async": true,
+				"description": "Gets a value from the legacy pref system.",
+				"parameters": [
+					{
+						"name": "name",
+						"type": "string",
+						"description": "Name of the preference."
+					},
+					{
+						"name": "fallback",
+						"type": "any",
+						"description": "Value to be returned, if the requested preference does not exist.",
+						"optional": true,
+						"default": null
+					},
+					{
+						"name": "userPrefOnly",
+						"type": "boolean",
+						"optional": true,
+						"default": false
+					}
+				]
+			},
+			{
+				"name": "setPref",
+				"type": "function",
+				"async": true,
+				"description": "Sets a value for an existing pref of the legacy pref system.",
+				"parameters": [
+					{
+						"name": "name",
+						"type": "string",
+						"description": "Name of the preference."
+					},
+					{
+						"name": "value",
+						"choices": [
+							{
+								"type": "string"
+							},
+							{
+								"type": "integer"
+							},
+							{
+								"type": "boolean"
+							}
+						],
+						"description": "Value to be set."
+					}
+				]
+			},
+			{
+				"name": "resetPref",
+				"type": "function",
+				"description": "Removes a user value from the legacy pref system.",
+				"parameters": [
+					{
+						"name": "name",
+						"type": "string",
+						"description": "Name of the preference."
+					}
+				]
+			},
+			{
+				"name": "getNativeFolder",
+				"type": "function",
+				"async": true,
+				"parameters": [
+					{
+						"name": "selectedFolder",
+						"$ref": "folders.MailFolder"
+					}
+				]
+			},
+			{
+				"name": "getFolderFlag",
+				"type": "function",
+				"async": true,
+				"parameters": [
+					{
+						"name": "selectedFolder",
+						"$ref": "folders.MailFolder"
+					},
+					{
+						"name": "flag",
+						"type": "number"
+					}
+				]
+			},
+			{
+				"name": "setFolderFlag",
+				"type": "function",
+				"async": true,
+				"parameters": [
+					{
+						"name": "selectedFolder",
+						"$ref": "folders.MailFolder"
+					},
+					{
+						"name": "flag",
+						"type": "number"
+					}
+				]
+			},
+			{
+				"name": "clearFolderFlag",
+				"type": "function",
+				"async": true,
+				"parameters": [
+					{
+						"name": "selectedFolder",
+						"$ref": "folders.MailFolder"
+					},
+					{
+						"name": "flag",
+						"type": "number"
+					}
+				]
+			}
+		]
+	}
+]

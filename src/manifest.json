@@ -1,0 +1,71 @@
+{
+	"manifest_version": 3,
+	"name": "__MSG_extensionName__",
+	"description": "__MSG_extensionDescription__",
+	"author": "__SET_ON_BUILD__",
+	"version": "__SET_ON_BUILD__",
+	"homepage_url": "https://github.com/di-VISION-Dev/thunderbird-advanced-folder-archiver",
+	"browser_specific_settings": {
+		"gecko": {
+			"id": "thubiarc@di-vision-co.biz",
+			"strict_min_version": "128.0"
+		}
+	},
+	"permissions": [
+		"accountsFolders",
+		"accountsRead",
+		"alarms",
+		"menus",
+		"messagesTags",
+		"messagesTagsList",
+		"messagesMove",
+		"messagesRead",
+		"messagesDelete",
+		"notifications",
+		"storage"
+	],
+	"default_locale": "en",
+	"icons": {
+		"16": "images/icon.svg",
+		"24": "images/icon.svg",
+		"32": "images/icon.svg",
+		"48": "images/icon.svg"
+	},
+	"experiment_apis": {
+		"thubiarc": {
+			"schema": "api/schema.json",
+			"parent": {
+				"scopes": [
+					"addon_parent"
+				],
+				"paths": [
+					[
+						"thubiarc"
+					]
+				],
+				"script": "api/thubiarc.js"
+			}
+		}
+	},
+	"background": {
+		"page": "ui/background.html"
+	},
+	"options_ui": {
+		"page": "ui/options.html?embed=1",
+		"open_in_tab": true
+	},
+	"action": {
+		"default_title": "Folder Archiver",
+		"default_icon": {
+			"32": "images/icon.svg",
+			"64": "images/icon.svg"
+		},
+		"default_windows": [
+			"normal"
+		],
+		"type": "menu",
+		"allowed_spaces": [
+			"mail"
+		]
+	}
+}

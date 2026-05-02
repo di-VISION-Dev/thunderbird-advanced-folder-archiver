@@ -1,0 +1,24 @@
+{
+	"private": true,
+	"name": "make-xpi",
+	"description": "XPI generator",
+	"version": "0.1.0",
+	"author": "hatelamers",
+	"license": "MIT",
+	"type": "module",
+	"module": "index.mjs",
+	"exports": {
+		"import": "./index.mjs"
+	},
+	"main": "./index.mjs",
+	"bin": {
+		"make-xpi": "index.mjs"
+	},
+	"scripts": {
+		"build": "exit 0",
+		"test": "exit 0"
+	},
+	"devDependencies": {
+		"zip-lib": "^1.3.2"
+	}
+}
