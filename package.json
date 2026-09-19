@@ -1,13 +1,13 @@
 {
 	"name": "thunderbird-advanced-folder-archiver",
 	"private": true,
-	"version": "0.1.5",
+	"version": "0.1.6",
 	"description": "Advanced Folder Archiver for Thunderbird. Archives messages on per folder basis, supports manual and automatic triggering of archiving tasks.",
 	"author": "diVISION Development",
 	"license": "GPL-3.0-or-later",
 	"repository": {
 		"type": "git",
-		"url": "hhttps://github.com/di-VISION-Dev/thunderbird-advanced-folder-archiver.git"
+		"url": "https://github.com/di-VISION-Dev/thunderbird-advanced-folder-archiver.git"
 	},
 	"config": {
 		"manifest_version": 3
@@ -21,14 +21,16 @@
 		"build-dev": "rollup --config --environment mode:development",
 		"watch": "chokidar './src/**' --initial -t 1000 -c \"rollup --config --environment watched:1,mode:development\"",
 		"make-xpi": "make-xpi ThuBiArc",
+		"make-xpi-pub": "make-xpi ThuBiArc-pub -r \"153.*\"",
 		"package": "npm run build && npm run make-xpi",
+		"package-pub": "npm run build && npm run make-xpi-pub",
 		"package-dev": "npm run build-dev && npm run make-xpi"
 	},
 	"devDependencies": {
 		"@rollup/plugin-terser": "^1.0.0",
 		"bootstrap": "^5.3.8",
 		"chokidar-cli": "^3.0.0",
-		"rollup": "^4.60.2",
+		"rollup": "^4.63.3",
 		"rollup-copy-transform-css": "^2.2.0",
 		"rollup-plugin-cleandir": "^3.0.0",
 		"rollup-plugin-copy": "^3.5.0",
