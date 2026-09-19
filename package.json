@@ -1,7 +1,7 @@
 {
 	"name": "thunderbird-advanced-folder-archiver",
 	"private": true,
-	"version": "0.1.6",
+	"version": "0.1.7",
 	"description": "Advanced Folder Archiver for Thunderbird. Archives messages on per folder basis, supports manual and automatic triggering of archiving tasks.",
 	"author": "diVISION Development",
 	"license": "GPL-3.0-or-later",
