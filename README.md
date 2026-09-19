@@ -34,3 +34,10 @@ This commands would build the sources and generate the XPI package in `dist` dir
 
 ## Contributing
 All contributions to development and error fixing are welcome. Please always use `develop` branch for forks and pull requests, `main` is reserved for stable releases and critical vulnarability fixes only.
+### AI Use
+Whether you use AI in development - it's up to you and your conciousness. However, we won't accept any submissions that are entirely/mostly AI generated, if you cannot take responsibilty for every line of code or comment in your PR or issue your contribution will be rejected.
+
+When subitting an issue or PR with AI assistance you are required to:
+1. identify the used model / agent
+1. attach **all** used prompts
+1. reference **all** third-party code utilized by the model / agent including licenses

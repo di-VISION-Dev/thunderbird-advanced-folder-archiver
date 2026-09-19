@@ -24,13 +24,13 @@ jobs:
     timeout-minutes: 15
     permissions:
         packages: write
-        contents: read
+        contents: write
         id-token: write
 
     steps:
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@v5
     - name: Setup Node.js
-      uses: actions/setup-node@v4
+      uses: actions/setup-node@v5
       with:
         node-version: 24.x
         cache: 'npm'
@@ -49,13 +49,14 @@ jobs:
       run: |
         npm ci
         npm run package
+        npm run package-pub
 
     - name: Publish XPI to GitHub
-      uses: softprops/action-gh-release@v2.4.2
+      uses: softprops/action-gh-release@v3
       with:
         files: "dist/ThuBiArc-*"
       env:
-        GITHUB_TOKEN: ${{ secrets.PACKAGE_WRITE_TOKEN }}
+        token: ${{ secrets.PACKAGE_WRITE_TOKEN }}
 
     # - name: Sign and Publish to ATN
     #   uses: kewisch/action-web-ext@v1
