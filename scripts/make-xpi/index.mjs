@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 import { argv } from 'node:process';
-import { realpath, stat, readFile, mkdir, unlink } from 'node:fs/promises';
+import { realpath, stat, readFile, writeFile, mkdir, unlink } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
 import { parseArgs } from 'node:util';
 import path from 'node:path';
@@ -41,6 +41,10 @@ export async function cliStart() {
 				type: 'string',
 				short: 'v'
 			},
+			restrictMax: {
+				type: 'string',
+				short: 'r'
+			},
 			sourceDir: {
 				type: 'string',
 				short: 's',
@@ -65,16 +69,22 @@ export async function cliStart() {
 
 }
 
-export async function makeXpi({ name, version, sourceDir = DEFAULT_SOURCE_DIR, outputDir = DEFAULT_OUTPUT_DIR } = {}) {
+export async function makeXpi({ name, version, restrictMax, sourceDir = DEFAULT_SOURCE_DIR, outputDir = DEFAULT_OUTPUT_DIR } = {}) {
 	if (!name) {
 		throw new Error("Name is required");
 	}
 	if (!(await dirExists(sourceDir))) {
 		throw new Error(`${sourceDir} is not an accessible directory`);
 	}
-	const manifest = JSON.parse(await readFile(path.resolve(sourceDir, "manifest.json"), 'utf8'));
+	const manifestPath = path.resolve(sourceDir, "manifest.json");
+	const origManifest = await readFile(manifestPath, 'utf8');
+	const manifest = JSON.parse(origManifest);
 	if (!version) {
 		version = manifest.version;
+	}
+	if (restrictMax) {
+		manifest.browser_specific_settings.gecko.strict_max_version = restrictMax;
+		await writeFile(manifestPath, JSON.stringify(manifest, undefined, 4), 'utf8');
 	}
 	if (!(await dirExists(outputDir))) {
 		await mkdir(outputDir, { recursive: true });
@@ -86,4 +96,7 @@ export async function makeXpi({ name, version, sourceDir = DEFAULT_SOURCE_DIR, o
 		await unlink(xpiPath);
 	}
 	await zl.archiveFolder(sourceDir, xpiPath);
+	if (restrictMax) {
+		await writeFile(manifestPath, origManifest, 'utf8');
+	}
 }
